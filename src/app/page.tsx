@@ -9,6 +9,7 @@ export default function Home() {
       <Navbar />
 
       {/* Header */}
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       <header className="relative w-full h-[200vh] sm:h-[80vh] bg-cover bg-center" style={{ backgroundImage: "url('/images/header.png')" }}>
         <div className="absolute inset-0 flex flex-col items-center justify-center  bg-opacity-40">
           <h1 className="text-white text-3xl sm:text-5xl font-bold text-center">Mahadewabox</h1>
@@ -17,11 +18,11 @@ export default function Home() {
       </header>
       
       {/* About Us */}
+      
       <section id="about" className="bg-gray-100 py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
           <p className="text-lg">
-            Mahadewabox adalah konten kreator yang menyajikan humor dan cerita tentang kehidupan pelajar dengan sentuhan kreativitas tinggi. Kami ingin berbagi cerita dan tawa dengan audiens melalui platform digital.
           </p>
         </div>
       </section>
@@ -53,13 +54,13 @@ export default function Home() {
 
       {/* Character Explanation */}
       <section id="characters" className="bg-gray-200 py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Our Characters</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 ">Our Characters</h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Character 1 */}
           <div className="text-center">
-            <Image src="/images/kar.png" alt="Character 1" width={150} height={150} layout="responsive" className="rounded-full mx-auto" />
-            <h3 className="text-xl font-semibold mt-4">Character 1</h3>
-            <p className="text-gray-600 mt-2">Deskripsi singkat karakter 1.</p>
+            <Image src="/images/botak.png" alt="Character 1" width={150} height={150} layout="responsive" className="rounded-full mx-auto" />
+            <h3 className="text-xl font-semibold mt-4">botak</h3>
+            <p className="text-gray-600 mt-2">mahasiswa</p>
           </div>
           {/* Character 2 */}
           <div className="text-center">
