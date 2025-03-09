@@ -10,10 +10,11 @@ export default function Home() {
 
       {/* Header */}
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      <header className="relative w-full h-[200vh] sm:h-[80vh] bg-cover bg-center" style={{ backgroundImage: "url('/images/header.png')" }}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-opacity-40">
-        <h1 className="text-white text-3xl sm:text-5xl font-bold text-center">Mahadewabox</h1>
+      <header className="relative w-full h-[200vh] sm:h-[80vh] bg-cover bg-center" >
+      <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ backgroundColor: '#144E83' }}>
+      <h1 className="text-white text-3xl sm:text-5xl font-bold text-center">Mahadewabox</h1>
         <p className="text-white text-base sm:text-lg text-center">Humor, Cerita, dan Kreativitas Seputar Dunia Pelajar</p>
+        <img src="/images/bestie.png"></img>
       </div>
     </header>
       
