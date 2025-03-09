@@ -1,101 +1,93 @@
-import Image from "next/image";
+import Image from 'next/image';
+import { FaInstagram, FaTiktok } from 'react-icons/fa'; // Untuk ikon sosial media
+import Navbar from '../app/navbar'; 
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      {/* Navbar */}
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+      {/* Header */}
+      <header className="relative w-full h-[200vh] sm:h-[80vh] bg-cover bg-center" style={{ backgroundImage: "url('/images/header.png')" }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center  bg-opacity-40">
+          <h1 className="text-white text-3xl sm:text-5xl font-bold text-center">Mahadewabox</h1>
+          <p className="text-white text-base sm:text-lg text-center">Humor, Cerita, dan Kreativitas Seputar Dunia Pelajar</p>
+        </div>
+      </header>
+      
+      {/* About Us */}
+      <section id="about" className="bg-gray-100 py-16 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">About Us</h2>
+          <p className="text-lg">
+            Mahadewabox adalah konten kreator yang menyajikan humor dan cerita tentang kehidupan pelajar dengan sentuhan kreativitas tinggi. Kami ingin berbagi cerita dan tawa dengan audiens melalui platform digital.
+          </p>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section id="content" className="py-16 px-4">
+        <h2 className="text-3xl font-bold text-center mb-8">Content We Create</h2>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {/* Card 1 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <Image src="/images/content1.jpg" alt="Content 1" width={500} height={300} layout="responsive" className="rounded-lg" />
+            <h3 className="text-xl font-semibold mt-4">Content Title 1</h3>
+            <p className="text-gray-600 mt-2">Deskripsi singkat mengenai konten ini.</p>
+          </div>
+          {/* Card 2 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <Image src="/images/content2.jpg" alt="Content 2" width={500} height={300} layout="responsive" className="rounded-lg" />
+            <h3 className="text-xl font-semibold mt-4">Content Title 2</h3>
+            <p className="text-gray-600 mt-2">Deskripsi singkat mengenai konten ini.</p>
+          </div>
+          {/* Card 3 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <Image src="/images/content3.jpg" alt="Content 3" width={500} height={300} layout="responsive" className="rounded-lg" />
+            <h3 className="text-xl font-semibold mt-4">Content Title 3</h3>
+            <p className="text-gray-600 mt-2">Deskripsi singkat mengenai konten ini.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Character Explanation */}
+      <section id="characters" className="bg-gray-200 py-16 px-4">
+        <h2 className="text-3xl font-bold text-center mb-8">Our Characters</h2>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Character 1 */}
+          <div className="text-center">
+            <Image src="/images/kar.png" alt="Character 1" width={150} height={150} layout="responsive" className="rounded-full mx-auto" />
+            <h3 className="text-xl font-semibold mt-4">Character 1</h3>
+            <p className="text-gray-600 mt-2">Deskripsi singkat karakter 1.</p>
+          </div>
+          {/* Character 2 */}
+          <div className="text-center">
+            <Image src="/images/character2.jpg" alt="Character 2" width={150} height={150} layout="responsive" className="rounded-full mx-auto" />
+            <h3 className="text-xl font-semibold mt-4">Character 2</h3>
+            <p className="text-gray-600 mt-2">Deskripsi singkat karakter 2.</p>
+          </div>
+          {/* Character 3 */}
+          <div className="text-center">
+            <Image src="/images/character3.jpg" alt="Character 3" width={150} height={150} layout="responsive" className="rounded-full mx-auto" />
+            <h3 className="text-xl font-semibold mt-4">Character 3</h3>
+            <p className="text-gray-600 mt-2">Deskripsi singkat karakter 3.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 w-full bg-gray-800 text-white">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-8">
+          <a href="https://instagram.com/mahadewabox" target="_blank" rel="noopener noreferrer">
+            <FaInstagram size={30} />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="https://www.tiktok.com/@mahadewabox?_t=ZS-8uOi6E2f55k&_r=1" target="_blank" rel="noopener noreferrer">
+            <FaTiktok size={30} />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <p className="text-center mt-4">&copy; 2025 Mahadewabox. All rights reserved.</p>
       </footer>
-    </div>
+    </div>  
   );
 }
