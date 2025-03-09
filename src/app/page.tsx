@@ -23,7 +23,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
           <p className="text-lg">
-            Mahadewabox adalah konten kreator yang menyajikan humor dan cerita tentang kehidupan pelajar dengan sentuhan kreativitas tinggi. Kami ingin berbagi cerita dan tawa dengan audiens melalui platform digital.
           </p>
         </div>
       </section>
