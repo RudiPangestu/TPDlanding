@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 "use client"; // Add this line to mark the component as a client component
 
 import { useState } from 'react';
@@ -15,7 +14,7 @@ const Navbar = () => {
     <nav className="bg-opacity-50 backdrop-blur-md text-black p-4 fixed w-full z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="text-lg font-bold">
-          <Link href="/">
+          <Link href="#home" scroll={false}> {/* Link to the home section */}
             Mahadewabox
           </Link>
         </div>
@@ -29,7 +28,6 @@ const Navbar = () => {
           <Link href="#content" className="hover:text-gray-600">
             Content
           </Link>
-          
           <Link href="#contact" className="hover:text-gray-600">
             Contact
           </Link>
