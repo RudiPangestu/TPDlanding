@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav className=" bg-opacity-50 backdrop-blur-md text-white p-4 fixed w-full z-10">
+    <nav className=" bg-opacity-50 backdrop-blur-md text-black p-4 fixed w-full z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-lg font-bold">
+        <div className="text-lg  font-bold">
           <Link href="/">
             Mahadewabox
           </Link>
