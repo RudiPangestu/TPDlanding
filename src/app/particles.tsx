@@ -1,11 +1,16 @@
-"use client"
+"use client";
 
 import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
+import type { Engine } from "tsparticles-engine";
 
-export default function ParticleBackground({ className }) {
-  const particlesInit = useCallback(async (engine) => {
+interface ParticleBackgroundProps {
+  className?: string;
+}
+
+export default function ParticleBackground({ className }: ParticleBackgroundProps) {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
 
@@ -28,8 +33,8 @@ export default function ParticleBackground({ className }) {
               parallax: {
                 enable: true,
                 force: 60,
-                smooth: 10
-              }
+                smooth: 10,
+              },
             },
           },
           modes: {
@@ -43,9 +48,9 @@ export default function ParticleBackground({ className }) {
             grab: {
               distance: 150,
               links: {
-                opacity: 0.5
-              }
-            }
+                opacity: 0.5,
+              },
+            },
           },
         },
         particles: {
@@ -60,8 +65,8 @@ export default function ParticleBackground({ className }) {
             width: 1,
             triangles: {
               enable: false,
-              opacity: 0.1
-            }
+              opacity: 0.1,
+            },
           },
           move: {
             direction: "none",
@@ -76,9 +81,9 @@ export default function ParticleBackground({ className }) {
               enable: false,
               rotate: {
                 x: 600,
-                y: 1200
-              }
-            }
+                y: 1200,
+              },
+            },
           },
           number: {
             density: {
@@ -86,7 +91,7 @@ export default function ParticleBackground({ className }) {
               area: 800,
             },
             value: 80,
-            limit: 0
+            limit: 0,
           },
           opacity: {
             value: 0.5,
@@ -95,8 +100,8 @@ export default function ParticleBackground({ className }) {
               enable: true,
               speed: 1,
               opacity_min: 0.1,
-              sync: false
-            }
+              sync: false,
+            },
           },
           shape: {
             type: ["circle", "triangle", "star"],
@@ -108,16 +113,16 @@ export default function ParticleBackground({ className }) {
               enable: true,
               speed: 2,
               size_min: 0.1,
-              sync: false
-            }
+              sync: false,
+            },
           },
           twinkle: {
             particles: {
               enable: true,
               frequency: 0.05,
-              opacity: 0.8
-            }
-          }
+              opacity: 0.8,
+            },
+          },
         },
         detectRetina: true,
       }}
