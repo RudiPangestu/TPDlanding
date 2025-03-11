@@ -83,7 +83,7 @@ export default function Home() {
       {/* About Us Section with Particles */}
       <section id="about" className="py-24 px-4 bg-gradient-to-b from-gray-100 to-white relative">
         <div className="absolute inset-0 opacity-20">
-          <ParticleBackground />
+
         </div>
         <div className="max-w-7xl mx-auto text-center relative z-10" data-aos="fade-up">
           <div className="inline-block mb-6 relative">
