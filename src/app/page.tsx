@@ -27,11 +27,12 @@ export default function Home() {
       {/* Hero Section with Parallax and Particles */}
       <header 
         id="home" 
-        className="relative w-full h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover"
+        className="relative w-full h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover z-20"
         style={{ backgroundImage: "url('/images/gtw.png')" }}
       >
-        {/* Particle effect overlay */}
-        <ParticleBackground className="z-10" />
+        {/* Particle effect overlay (hapus dari hero section) */}
+        <ParticleBackground className="absolute inset-0" />
+
         
         <div className="absolute inset-0 z-0">
           <Image 
@@ -40,6 +41,7 @@ export default function Home() {
             layout="fill"
             objectFit="contain"
             priority
+            
           />
         </div>
 
@@ -82,10 +84,13 @@ export default function Home() {
 
       {/* About Us Section with Particles */}
       <section id="about" className="py-24 px-4 bg-gradient-to-b from-gray-100 to-white relative">
+        <ParticleBackground className="absolute inset-0" />
+
         <div className="absolute inset-0 opacity-20">
 
         </div>
         <div className="max-w-7xl mx-auto text-center relative z-10" data-aos="fade-up">
+          <ParticleBackground className="z-10" />
           <div className="inline-block mb-6 relative">
             <h2 className="text-4xl font-bold">About Us</h2>
             <div className="absolute -bottom-2 left-0 right-0 h-1 bg-yellow-400 rounded-full"></div>
@@ -97,6 +102,7 @@ export default function Home() {
 
         {/* Feature Cards */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
+       
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
             <div className="text-4xl mb-4">🎭</div>
             <h3 className="text-xl font-bold mb-2">Parodi Kreatif</h3>
@@ -119,6 +125,7 @@ export default function Home() {
 
       {/* Characters Section with Hover Effects */}
       <section id="characters" className="py-24 px-4 bg-gradient-to-b from-gray-200 to-gray-100">
+        <ParticleBackground className="absolute inset-0" />
         <div className="max-w-7xl mx-auto text-center" data-aos="fade-up">
           <div className="inline-block mb-10 relative">
             <h2 className="text-4xl font-bold">Our Characters</h2>
@@ -164,10 +171,13 @@ export default function Home() {
       
       {/* Video Section with Particles */}
       <section id="videos" className="py-24 px-4 bg-gradient-to-b from-white to-gray-100 relative">
+        <ParticleBackground className="absolute inset-0" />
         <div className="absolute inset-0 opacity-20">
-          <ParticleBackground />
+
         </div>
+        
         <div className="max-w-7xl mx-auto text-center relative z-10" data-aos="fade-up">
+
           <div className="inline-block mb-10 relative">
             <h2 className="text-4xl font-bold">Our Content</h2>
             <div className="absolute -bottom-2 left-0 right-0 h-1 bg-yellow-400 rounded-full"></div>
@@ -231,8 +241,10 @@ export default function Home() {
 
       {/* Footer with Animated Particles */}
       <footer className="py-16 w-full bg-gray-800 text-white relative">
+        <ParticleBackground className="absolute inset-0 opacity-10" />
+
         <div className="absolute inset-0 opacity-10">
-          <ParticleBackground />
+
         </div>
         <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
           <div className="flex items-center justify-center gap-8 mb-8">
