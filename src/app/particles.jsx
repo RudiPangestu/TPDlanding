@@ -15,7 +15,7 @@ export default function ParticleBackground({ className }) {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fpsLimit: 60,
+        fpsLimit: 120,
         interactivity: {
           events: {
             onClick: {
@@ -25,6 +25,11 @@ export default function ParticleBackground({ className }) {
             onHover: {
               enable: true,
               mode: "repulse",
+              parallax: {
+                enable: true,
+                force: 60,
+                smooth: 10
+              }
             },
           },
           modes: {
@@ -32,21 +37,31 @@ export default function ParticleBackground({ className }) {
               quantity: 4,
             },
             repulse: {
-              distance: 100,
+              distance: 150,
               duration: 0.4,
             },
+            grab: {
+              distance: 150,
+              links: {
+                opacity: 0.5
+              }
+            }
           },
         },
         particles: {
           color: {
-            value: "#FFD700", // Gold color to match your yellow theme
+            value: ["#FFD700", "#FFA500", "#FF8C00"], // Gold and amber colors
           },
           links: {
             color: "#FFD700",
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.4,
             width: 1,
+            triangles: {
+              enable: false,
+              opacity: 0.1
+            }
           },
           move: {
             direction: "none",
@@ -54,9 +69,16 @@ export default function ParticleBackground({ className }) {
             outModes: {
               default: "bounce",
             },
-            random: false,
-            speed: 2,
+            random: true,
+            speed: 3,
             straight: false,
+            attract: {
+              enable: false,
+              rotate: {
+                x: 600,
+                y: 1200
+              }
+            }
           },
           number: {
             density: {
@@ -64,16 +86,38 @@ export default function ParticleBackground({ className }) {
               area: 800,
             },
             value: 80,
+            limit: 0
           },
           opacity: {
             value: 0.5,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false
+            }
           },
           shape: {
-            type: "circle",
+            type: ["circle", "triangle", "star"],
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 1, max: 4 },
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 0.1,
+              sync: false
+            }
           },
+          twinkle: {
+            particles: {
+              enable: true,
+              frequency: 0.05,
+              opacity: 0.8
+            }
+          }
         },
         detectRetina: true,
       }}
