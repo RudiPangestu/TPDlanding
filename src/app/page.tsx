@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useEffect, useState } from "react";
@@ -36,19 +37,23 @@ export default function Home() {
       {/* Hero Section with Parallax and Particles */}
       <header 
         id="home" 
-        className="relative w-full h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover z-20 overflow-hidden"
+        className="relative w-full h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover z-9"
+        style={{ backgroundImage: "url('/images/perpus.webp')" }}
       >
-        {/* Background with parallax effect */}
-        <div 
-          className="absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"
-          style={{ 
-            backgroundImage: "url('/images/gtw.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            transform: `translateY(${scrollPosition * 0.4}px)`,
-            transition: "transform 0.1s ease-out"
-          }}
-        ></div>
+        {/* Particle effect overlay */}
+        <ParticleBackground className="absolute inset-0" />
+
+        
+        <div className="absolute inset-0 z-10">
+        <Image 
+          src="/images/perpus.webp" 
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+
+        </div>
         
         {/* Animated Particle effect overlay */}
         <ParticleBackground className="absolute inset-0" />
@@ -100,7 +105,7 @@ export default function Home() {
           </div>
         </div>
         <div 
-          className="absolute bottom-0 right-10 md:right-1/4 w-1/3 md:w-1/4 z-20" 
+          className="absolute bottom-0 right-10 md:right-1/6 w-1/4 md:w-1/4 z-20" 
           data-aos="fade-left" 
           data-aos-delay="300"
           style={{ transform: `translateY(${scrollPosition * -0.2}px)` }}
@@ -109,8 +114,8 @@ export default function Home() {
             <Image 
               src="/images/anomali.png" 
               alt="Anomali" 
-              width={250} 
-              height={300} 
+              width={230} 
+              height={280} 
               className="max-w-full h-auto"
             />
           </div>
@@ -122,9 +127,16 @@ export default function Home() {
         </div>
       </header>
 
-      {/* About Us Section with Particles and improved gradient */}
+      {/* About Us Section with textured background pattern */}
       <section id="about" className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-white to-gray-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-50 to-white"></div>
+        
+        {/* Decorative background patterns */}
+        <div className="absolute inset-0 opacity-5 bg-[url('/images/noise.png')] bg-repeat"></div>
+        
+        {/* Decorative circles */}
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-yellow-300 rounded-full filter blur-3xl opacity-10"></div>
+        <div className="absolute top-40 -right-20 w-80 h-80 bg-amber-400 rounded-full filter blur-3xl opacity-10"></div>
         
         <ParticleBackground className="absolute inset-0" />
 
@@ -145,7 +157,7 @@ export default function Home() {
         {/* Feature Cards with improved hover and shadows */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
           <div 
-            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-yellow-500/20 border border-transparent hover:border-yellow-200 group" 
+            className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-yellow-500/20 border border-transparent hover:border-yellow-200 group" 
             data-aos="fade-up" 
             data-aos-delay="100"
           >
@@ -155,7 +167,7 @@ export default function Home() {
           </div>
           
           <div 
-            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-yellow-500/20 border border-transparent hover:border-yellow-200 group" 
+            className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-yellow-500/20 border border-transparent hover:border-yellow-200 group" 
             data-aos="fade-up" 
             data-aos-delay="200"
           >
@@ -165,7 +177,7 @@ export default function Home() {
           </div>
           
           <div 
-            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-yellow-500/20 border border-transparent hover:border-yellow-200 group" 
+            className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 hover:shadow-yellow-500/20 border border-transparent hover:border-yellow-200 group" 
             data-aos="fade-up" 
             data-aos-delay="300"
           >
@@ -176,9 +188,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Characters Section with enhanced hover effects and card design */}
+      {/* Characters Section with diagonal pattern background */}
       <section id="characters" className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-200 via-gray-100 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white to-amber-50"></div>
+        
+        {/* Diagonal pattern background */}
+        <div className="absolute inset-0 opacity-5" style={{ 
+          backgroundImage: 'repeating-linear-gradient(45deg, #FFD700, #FFD700 10px, transparent 10px, transparent 20px)',
+        }}></div>
+        
+        {/* Decorative blobs */}
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-400 rounded-full filter blur-3xl opacity-10 transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500 rounded-full filter blur-3xl opacity-10 transform translate-x-1/2 -translate-y-1/2"></div>
+        
         <ParticleBackground className="absolute inset-0" />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -199,7 +221,7 @@ export default function Home() {
                 data-aos="fade-up" 
                 data-aos-delay={100 * index}
               >
-                <div className="bg-white p-6 rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform 
+                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform 
                   group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-yellow-400/20 border border-transparent 
                   group-hover:border-yellow-200 relative z-10">
                   
@@ -231,9 +253,23 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Video Section with improved card design and animation */}
+      {/* Video Section with wavy pattern background */}
       <section id="videos" className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-100 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-50 to-white"></div>
+        
+        {/* Wavy pattern background */}
+        <div className="absolute inset-0 opacity-10" style={{ 
+          backgroundImage: 'url(/images/wave-pattern.svg)',
+          backgroundSize: '200px',
+        }}></div>
+        
+        {/* Animated floating elements */}
+        <div className="absolute w-16 h-16 rounded-full bg-yellow-300 opacity-20 top-20 left-1/4 animate-pulse"></div>
+        <div className="absolute w-24 h-24 rounded-full bg-amber-400 opacity-20 bottom-40 right-1/3 animate-pulse" 
+             style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
+        <div className="absolute w-12 h-12 rounded-full bg-yellow-500 opacity-20 top-1/2 right-1/5 animate-pulse"
+             style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
+             
         <ParticleBackground className="absolute inset-0" />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -281,7 +317,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="p-4 bg-white">
+                <div className="p-4 bg-white/90 backdrop-blur-sm">
                   <h3 className="text-xl font-bold truncate group-hover:text-yellow-500 transition-colors duration-300">{video.title}</h3>
                   <div className="mt-2 flex justify-between text-sm text-gray-600">
                     <span>{video.views}</span>
@@ -305,12 +341,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer with enhanced design */}
+      {/* Footer with texture and enhanced design */}
       <footer className="py-16 w-full relative text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900"></div>
         <ParticleBackground className="absolute inset-0 opacity-20" />
 
+        {/* Texture overlay for added depth */}
         <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.png')] bg-repeat"></div>
+        
+        {/* Diagonal accent line */}
+        <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-r from-yellow-400 to-amber-500 transform -skew-y-1"></div>
         
         <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10 px-4">
           <div className="mb-8 relative overflow-hidden group">
