@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaInstagram, FaTiktok, FaArrowDown } from "react-icons/fa"; 
 import Navbar from "../app/navbar";
-import ParticleBackground from "../app/particles";
+// import ParticleBackground from "../app/particles";
 import 'aos/dist/aos.css';
 import AOS from "aos";
 
@@ -40,7 +40,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/images/gtw.png')" }}
       >
         {/* Particle effect overlay (hapus dari hero section) */}
-        <ParticleBackground className="absolute inset-0" />
+        {/* <ParticleBackground className="absolute inset-0" /> */}
 
         
         <div className="absolute inset-0 z-0">
@@ -55,7 +55,7 @@ export default function Home() {
         </div>
         
         {/* Animated Particle effect overlay */}
-        <ParticleBackground className="absolute inset-0" />
+        {/* <ParticleBackground className="absolute inset-0" /> */}
         
         <div className="z-20 text-center max-w-4xl px-4 relative">
           <h1 
@@ -130,7 +130,7 @@ export default function Home() {
       <section id="about" className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-white to-gray-100"></div>
         
-        <ParticleBackground className="absolute inset-0" />
+        {/* <ParticleBackground className="absolute inset-0" /> */}
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="inline-block mb-6 relative" data-aos="fade-up">
@@ -183,7 +183,7 @@ export default function Home() {
       {/* Characters Section with enhanced hover effects and card design */}
       <section id="characters" className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-200 via-gray-100 to-white"></div>
-        <ParticleBackground className="absolute inset-0" />
+        {/* <ParticleBackground className="absolute inset-0" /> */}
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="inline-block mb-10 relative" data-aos="fade-up">
@@ -238,7 +238,7 @@ export default function Home() {
       {/* Video Section with improved card design and animation */}
       <section id="videos" className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-100 to-white"></div>
-        <ParticleBackground className="absolute inset-0" />
+        {/* <ParticleBackground className="absolute inset-0" /> */}
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="inline-block mb-10 relative" data-aos="fade-up">
@@ -312,7 +312,7 @@ export default function Home() {
       {/* Footer with enhanced design */}
       <footer className="py-16 w-full relative text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900"></div>
-        <ParticleBackground className="absolute inset-0 opacity-20" />
+        {/* <ParticleBackground className="absolute inset-0 opacity-20" /> */}
 
         <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.png')] bg-repeat"></div>
         
