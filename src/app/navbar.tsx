@@ -1,62 +1,94 @@
-"use client"; // Add this line to mark the component as a client component
+"use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll event for navbar background change
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="bg-opacity-50 backdrop-blur-md text-black p-4 fixed w-full z-10">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-lg font-bold">
-          <Link href="#home" scroll={false}> {/* Link to the home section */}
+    <nav 
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white bg-opacity-90 backdrop-blur-md shadow-md py-3' 
+          : 'bg-[#F8F3D9] py-3.5'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <div className={`text-2xl font-bold transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-black'}`}>
+          <Link href="#home" scroll={false} className="flex items-center hover:text-amber-600 transition-colors duration-300">
             Mahadewabox
           </Link>
         </div>
-        <div className="hidden md:flex space-x-4">
-          <Link href="#about" className="hover:text-gray-600">
-            About Us
-          </Link>
-          <Link href="#characters" className="hover:text-gray-600">
-            Characters
-          </Link>
-          <Link href="#content" className="hover:text-gray-600">
-            Content
-          </Link>
-          <Link href="#contact" className="hover:text-gray-600">
-            Contact
-          </Link>
+        
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-8">
+          {['about', 'characters', 'content', 'contact'].map((item) => (
+            <Link 
+              key={item}
+              href={`#${item}`}
+              className={`font-medium transition-all duration-300 border-b-2 border-transparent hover:border-yellow-400 hover:text-amber-600 ${
+                isScrolled ? 'text-black' : 'text-yellow'
+              }`}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </Link>
+          ))}
         </div>
+
+        {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden focus:outline-none"
+          className={`md:hidden focus:outline-none transition-colors duration-300 ${
+            isScrolled ? 'text-black' : 'text-yellow'
+          }`}
+          aria-label="Toggle menu"
         >
-          {isOpen ? 'Close' : 'Menu'}
+          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
-      {isOpen && (
-        <div className="md:hidden bg-opacity-50 backdrop-blur-md p-4">
-          <div className="flex flex-col space-y-2">
-            <Link href="#about" className="hover:text-gray-600">
-              About Us
+
+      {/* Mobile Menu */}
+      <div className={`
+        md:hidden fixed inset-0 bg-black bg-opacity-90 backdrop-blur-md z-40 
+        transition-all duration-300 transform
+        ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'}
+      `}>
+        <div className="flex flex-col h-full justify-center items-center space-y-8 p-4">
+          {['home', 'about', 'characters', 'content', 'contact'].map((item) => (
+            <Link 
+              key={item}
+              href={`#${item}`}
+              onClick={toggleMenu}
+              className="text-yellow text-2xl font-medium hover:text-yellow-400 transition-colors duration-300"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
             </Link>
-            <Link href="#content" className="hover:text-gray-600">
-              Content
-            </Link>
-            <Link href="#characters" className="hover:text-gray-600">
-              Characters
-            </Link>
-            <Link href="#contact" className="hover:text-gray-600">
-              Contact
-            </Link>
-          </div>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
